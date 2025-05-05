@@ -8,11 +8,14 @@ const HeaderNavbar = () => {
   const isDesktopView = useResponsive("lg");
   const onClickHandler = () => {};
 
-  console.log(isDesktopView);
   return (
     <div className="relative">
       <div className="absolute top-4 lg:top-[35px] right-[28px] lg:right-0  w-[221px] p-0 lg:px-[211px] lg:w-full flex justify-between items-center lg:items-start z-10">
-        {isDesktopView ? <FameTonic /> : <FameTonicMobileView />}
+        {isDesktopView ? (
+          <FameTonic width={173.122} />
+        ) : (
+          <FameTonicMobileView width={107.784} height={46.072} />
+        )}
 
         {isDesktopView ? (
           <div className="flex gap-x-10 text-[#A9A9A9] text-[18px] font-semibold">
