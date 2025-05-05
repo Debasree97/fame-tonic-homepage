@@ -11,7 +11,7 @@ const breakpoints: Record<string, number> = {
 };
 
 const useResponsive = (breakpoint: keyof typeof breakpoints) => {
-  const [matches, setMatches] = useState(false);
+  const [matches, setMatches] = useState<boolean>(false);
 
   useEffect(() => {
     const updateMatch = () => {
