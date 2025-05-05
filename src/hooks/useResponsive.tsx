@@ -10,24 +10,23 @@ const breakpoints: Record<string, number> = {
   "2xl": 1536,
 };
 
-const useResponsive = (breakpoint: string) => {
-  const [matches, setMatches] = useState(() =>
-    typeof window !== "undefined"
-      ? window.innerWidth >= breakpoints[breakpoint]
-      : false
-  );
+const useResponsive = (breakpoint: keyof typeof breakpoints) => {
+  const [matches, setMatches] = useState(false);
 
   useEffect(() => {
     const updateMatch = () => {
-      setMatches(window.innerWidth >= breakpoints[breakpoint]);
+      const width = window.innerWidth;
+      const match = width >= breakpoints[breakpoint];
+      setMatches(match);
     };
 
+    updateMatch(); // Run once after mount
     window.addEventListener("resize", updateMatch);
-    updateMatch(); // Initial check
 
     return () => window.removeEventListener("resize", updateMatch);
   }, [breakpoint]);
 
   return matches;
 };
+
 export default useResponsive;
