@@ -14,8 +14,8 @@ const HeroSection = () => {
   const onClickHandler = () => {};
 
   return (
-    <div className="flex flex-col lg:flex-row-reverse relative">
-      <div
+    <body className="flex flex-col lg:flex-row-reverse relative">
+      <section
         className={twMerge(
           isDesktopView && "absolute top-[80px] right-[101px]"
         )}
@@ -27,9 +27,9 @@ const HeroSection = () => {
           alt=""
           className={twMerge(isDesktopView && "object-cover")}
         />
-      </div>
+      </section>
 
-      <div className="flex flex-col lg:w-[516px] absolute top-[342px] lg:top-[166px] left-0 lg:left-[215px]">
+      <section className="flex flex-col lg:w-[516px] absolute top-[342px] lg:top-[166px] left-0 lg:left-[215px]">
         <div className="flex flex-col gap-y-[22px] lg:gap-y-4 px-5 pt-5 lg:p-0">
           <div
             className=" text-center lg:text-start font-extrabold lg:font-bold text-[25px] lg:text-[35px] "
@@ -76,14 +76,14 @@ const HeroSection = () => {
             <FooterSection isDesktopView={isDesktopView} />
           </div>
         )}
-      </div>
+      </section>
 
       {!isDesktopView && (
         <div className="absolute top-[785px] left-0 w-full">
           <GetStartedSection onClickHandler={onClickHandler} />
         </div>
       )}
-    </div>
+    </body>
   );
 };
 
@@ -112,7 +112,7 @@ const GetStartedSection = ({
 
 const FooterSection = ({ isDesktopView }: { isDesktopView: boolean }) => {
   return (
-    <div className="flex flex-col gap-y-[19px] lg:gap-y-3 justify-center lg:justify-start  font-medium text-[#ABABAB] lg:pt-[30px] text-center lg:text-start w-[281px] lg:w-full">
+    <footer className="flex flex-col gap-y-[19px] lg:gap-y-3 justify-center lg:justify-start  font-medium text-[#ABABAB] lg:pt-[30px] text-center lg:text-start w-[281px] lg:w-full">
       <p className="text-[12px]">
         By clicking &quot;Get Started&quot;, you agree with Terms and
         Conditions, Privacy Policy, Subscription Terms
@@ -127,6 +127,6 @@ const FooterSection = ({ isDesktopView }: { isDesktopView: boolean }) => {
       >
         Fametonic {new Date().getFullYear()} ©All Rights Reserved.
       </p>
-    </div>
+    </footer>
   );
 };
