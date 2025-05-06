@@ -1,6 +1,6 @@
 # FameTonic Static Homepage
 
-A pixel-perfect landing page for **FameTonic**, built using **Next.js 15** and **Tailwind CSS v4**. This project implements only the static homepage design at two breakpoints:
+A responsive landing page for **FameTonic**, built using **Next.js 15** and **Tailwind CSS v4**. This project implements the figma static homepage design with being pixel-perfect at two breakpoints:
 
 - 📱 **Mobile** – 390px width
 - 🖥️ **Desktop** – 1440px width
@@ -38,6 +38,7 @@ src/
 │   ├── utils.tsx                 # Shared utilities
 │   └── hooks/
 │       └── useResponsive.tsx     # Responsive detection logic
+│       └── useResponsivePositioningValue.ts   # Responsive position value detection logic
 
 public/
 └── images/                       # Static assets
@@ -58,8 +59,9 @@ public/
 
 ## ✅ Status
 
-- [x] Mobile version (390px only)
-- [x] Desktop version (1440px only)
+- [x] Responsive
+- [x] Pixel-Perfect Mobile dimension (390px only)
+- [x] Pixel-Perfect Desktop dimension (1440px only)
 - [x] Static layout only — no dynamic functionality
 - [x] Pixel perfect design using Tailwind and custom hooks
 

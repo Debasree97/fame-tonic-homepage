@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 
+// tailwind breakpoint
 const breakpoints: Record<string, number> = {
+  xs: 520, //custom breakpoint
   sm: 640,
   md: 768,
   lg: 1024,

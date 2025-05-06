@@ -3,14 +3,26 @@
 import useResponsive from "@/hooks/useResponsive";
 import { FameTonic, FameTonicMobileView } from "../icons";
 import { navMenuData } from "../utils";
+import { useResponsivePositioningValue } from "@/hooks/useResponsivePositioningValue";
 
 const HeaderNavbar = () => {
-  const isDesktopView = useResponsive("lg");
+  const [isDesktopView, navbarWidth] = [
+    useResponsive("lg"),
+    useResponsivePositioningValue(221, "increase", false),
+  ];
+
   const onClickHandler = () => {};
 
   return (
     <div className="relative">
-      <div className="absolute top-4 lg:top-[35px] right-[28px] lg:right-0  w-[221px] p-0 lg:px-[211px] lg:w-full flex justify-between items-center lg:items-start z-10">
+      <div
+        className="absolute top-4 lg:top-[35px] right-[28px] lg:right-0  w-[221px]  p-0 xl:px-[211px] lg:px-[130px] lg:w-full flex justify-between items-center lg:items-start z-10"
+        style={{
+          ...(!isDesktopView && {
+            width: `${navbarWidth}px`,
+          }),
+        }}
+      >
         {isDesktopView ? (
           <FameTonic width={173.122} />
         ) : (

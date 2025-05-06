@@ -28,3 +28,23 @@ export const imgProperties = (isDesktopView: boolean) => {
 
   return isDesktopView ? properties.desktopView : properties.mobileView;
 };
+
+export const getScaledSize = (screenWidth: number) => {
+  const maxWidth = 1440;
+  const targetWidth = 666;
+  const targetHeight = 679;
+
+  const scale = Math.min(1, screenWidth / maxWidth);
+
+  return {
+    width: Math.round(targetWidth * scale),
+    height: Math.round(targetHeight * scale),
+  };
+};
+
+export const getNewLeftValue = (screenWidth: number) => {
+  const scale = Math.max(0, Math.min(1, (1440 - screenWidth) / 1440));
+  const newLeftValue = Math.max(10, 235 - scale * 225);
+
+  return newLeftValue;
+};
